@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Domino Bal Hesablama</string>
-    <string name="ad_secmek">Ad seçmək üçün toxun</string>
+    <string name="ad_secmek">Ad seçmək üçün toxun :</string>
     <string name="zero">0</string>
     <string name="reset_button">reset</string>
     <string name="increase_five_point">5+</string>

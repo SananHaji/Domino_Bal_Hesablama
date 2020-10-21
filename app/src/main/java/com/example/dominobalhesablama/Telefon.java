@@ -59,7 +59,7 @@ public class Telefon extends AppCompatActivity {
         floatingActionButtonAdamElaveEt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Yeni Adam Əlavə Olundu", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Yeni Adam Əlavə Olundu", Toast.LENGTH_SHORT).show();
                 AdamSayi+=1;
                 editor.putInt("AdamSayiInt", AdamSayi);
                 editor.commit();
@@ -73,13 +73,18 @@ public class Telefon extends AppCompatActivity {
         floatingActionButtonAdamAzalt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "1 Adam Silindi", Toast.LENGTH_SHORT).show();
-                AdamSayi-=1;
-                editor.putInt("AdamSayiInt", AdamSayi);
-                editor.commit();
-                qayitsinMi = 1;
-                RVAdapter rvAdapter = new RVAdapter(Telefon.this, AdamSayi, qayitsinMi);
-                recyclerViewTelefon.setAdapter(rvAdapter);
+                if(AdamSayi <= 0){
+                    Toast.makeText(getApplicationContext(), "0 Oyunçu var!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+//                    Toast.makeText(getApplicationContext(), "1 Adam Silindi", Toast.LENGTH_SHORT).show();
+                    AdamSayi -= 1;
+                    editor.putInt("AdamSayiInt", AdamSayi);
+                    editor.commit();
+                    qayitsinMi = 1;
+                    RVAdapter rvAdapter = new RVAdapter(Telefon.this, AdamSayi, qayitsinMi);
+                    recyclerViewTelefon.setAdapter(rvAdapter);
+                }
             }
         });
 

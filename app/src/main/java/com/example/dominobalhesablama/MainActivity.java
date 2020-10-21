@@ -35,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancel() {
                 qayitsinMi = 0;
+                sp = getSharedPreferences("AdamSayi", MODE_PRIVATE);
+                editor = sp.edit();
+                editor.clear();
+                editor.commit();
+
             }
 
             @Override
