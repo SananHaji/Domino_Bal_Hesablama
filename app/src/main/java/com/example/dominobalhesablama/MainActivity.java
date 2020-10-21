@@ -26,19 +26,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //*********** Qayitsin Mi
-//        qayitsinMiFunc();
-//        promptForResult(new PromptRunnable(){
-//            @Override
-//            public void run() {
-//                qayitsinMi = this.getValue();
-//                Log.d("PromptRunngetValue()", String.valueOf(qayitsinMi));
-//            }
-//        });
-//        Log.d("PromptRunngetValue()22", String.valueOf(qayitsinMi));
-//        //***********
-//        Log.d("qayitsinMi", String.valueOf(qayitsinMi));
-
         promptForResult(new DialogInputInterface() {
             @Override
             public View onBuildDialog() {
@@ -93,16 +80,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    interface DialogInputInterface {
-        // onBuildDialog() is called when the dialog builder is ready to accept a view to insert
-        // into the dialog
-        View onBuildDialog();
-        // onCancel() is called when the user clicks on 'Cancel'
-        void onCancel();
-        // onResult(View v) is called when the user clicks on 'Ok'
-        void onResult(View v);
-    }
     void promptForResult(final DialogInputInterface dlg) {
         // replace "MyClass.this" with a Context object. If inserting into a class extending Activity,
         // using just "this" is perfectly ok.

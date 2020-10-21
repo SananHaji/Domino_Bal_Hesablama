@@ -49,6 +49,7 @@ public class Telefon extends AppCompatActivity {
 
         recyclerViewTelefon.setHasFixedSize(true);
         recyclerViewTelefon.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewTelefon.addItemDecoration(new SimpleDividerItemDecoration(this));
 
         RVAdapter rvAdapter = new RVAdapter(this, AdamSayi, qayitsinMi);
 
